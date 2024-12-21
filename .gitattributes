@@ -1,0 +1,5 @@
+*.dylib filter=lfs diff=lfs merge=lfs -text
+*.assets filter=lfs diff=lfs merge=lfs -text
+Library/ArtifactDB filter=lfs diff=lfs merge=lfs -text
+ filter=lfs diff=lfs merge=lfs -text
+Meta[[:space:]]Quest[[:space:]]Pro[[:space:]]Project/Library/ArtifactDB filter=lfs diff=lfs merge=lfs -text
