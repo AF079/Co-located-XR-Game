@@ -126,6 +126,7 @@
 -define:PUN_2_19_OR_NEWER
 -define:FUSION_WEAVER
 -define:FUSION2
+-define:ISDK_OPENXR_HAND
 -define:XRI_PRESENT
 -define:ISX_PRESENT
 -define:CSHARP_7_OR_LATER

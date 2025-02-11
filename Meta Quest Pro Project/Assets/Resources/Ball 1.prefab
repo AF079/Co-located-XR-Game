@@ -299,9 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7582b72538d47b0478ce976d20525388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Logger: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
-  prevSentPos: {x: 0, y: 0, z: 0}
 --- !u!54 &1540210595305357607
 Rigidbody:
   m_ObjectHideFlags: 0

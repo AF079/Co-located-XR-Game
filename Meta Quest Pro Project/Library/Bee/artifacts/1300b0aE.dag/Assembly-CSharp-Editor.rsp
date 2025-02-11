@@ -126,6 +126,7 @@
 -define:PUN_2_19_OR_NEWER
 -define:FUSION_WEAVER
 -define:FUSION2
+-define:ISDK_OPENXR_HAND
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -define:UNITY_EDITOR_ONLY_COMPILATION
@@ -402,7 +403,10 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.BuildingBlocks.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.BuildingBlocks.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.Callbacks.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.Id.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.PlayCompanion.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.Reflection.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.Settings.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.StatusMenu.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.Tags.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.UserInterface.ref.dll"

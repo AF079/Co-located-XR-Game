@@ -59,8 +59,9 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 startForce = new Vector3(UnityEngine.Random.Range(-2, 2), 0, UnityEngine.Random.Range(-2, 2)); //Random direction
-        rb.AddForce(startForce, ForceMode.Impulse); //Apply random force in x and z direction
+       /* Vector3 startForce = new Vector3(UnityEngine.Random.Range(-2, 2), 0, UnityEngine.Random.Range(-2, 2)); //Random direction
+        rb.AddForce(startForce, ForceMode.Impulse); //Apply random force in x and z direction*/
+      
         fixedDeltaTime = Time.fixedDeltaTime;
         Time.timeScale = 0.15f; //Slow down time
         Logger = GameObject.Find("Logger");
@@ -73,6 +74,7 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
         {
             targetPosition = rb.position;
         }
+        
     }
     // Update is called once per frame
     void Update()
@@ -103,11 +105,12 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
         gameObject.GetComponent<MeshRenderer>().material.color = new Color(color.x, color.y, color.z);
 
     }
+    bool done = false;
     void FixedUpdate()
     {
 
-        
-        if (PhotonNetwork.IsMasterClient)
+
+        /*if (PhotonNetwork.IsMasterClient)
         {
             rb.MovePosition(Vector3.Lerp(rb.position, simulatedPosition, Time.fixedDeltaTime * 5f)); //Move position of sphere to simulated position (MC)
 
@@ -116,6 +119,14 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
         {
             rb.MovePosition(Vector3.Lerp(rb.position, targetPosition, Time.fixedDeltaTime * 5f)); //Move position of sphere to target position (NMC)
 
+        }*/
+
+        if (!PhotonNetwork.IsMasterClient && !done)
+        {
+            Vector3 u = transform.position;
+            Vector3 v = NetworkManager.move(u);
+            rb.MovePosition(Vector3.Lerp(rb.position, v, Time.fixedDeltaTime * 5f));
+            done = true;
         }
 
     }
@@ -146,7 +157,7 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
 
-        if (PhotonNetwork.IsMasterClient)
+/*        if (PhotonNetwork.IsMasterClient)
         {
 
             if (stream.IsWriting) //Only Master Client can write over channel
@@ -190,7 +201,7 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
             {
                 //Debug.Log("ERROR: " + e);
             }
-        }
+        }*/
 
     }
 

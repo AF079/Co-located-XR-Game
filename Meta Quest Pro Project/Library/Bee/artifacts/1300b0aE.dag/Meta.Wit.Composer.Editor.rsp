@@ -126,6 +126,7 @@
 -define:PUN_2_19_OR_NEWER
 -define:FUSION_WEAVER
 -define:FUSION2
+-define:ISDK_OPENXR_HAND
 -define:OVR_UNITY_PACKAGE_MANAGER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
@@ -379,15 +380,14 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/AssemblyInfo.cs"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/ComposerServiceEditor.cs"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/Data/ComposerCanvasData.cs"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/Data/Configuration/ComposerParser.cs"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/Data/Configuration/IContextNodeParser.cs"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/Data/Configuration/Tabs/WitConfigurationComposerTab.cs"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/Data/Configuration/WitComposerDataRefresher.cs"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/Drawers/VersionTagDropdownDrawer.cs"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/Drawers/WitComposerInfoPropertyDrawer.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/AssemblyInfo.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/ComposerServiceEditor.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/Data/ComposerCanvasData.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/Data/Configuration/ComposerParser.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/Data/Configuration/IContextNodeParser.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/Data/Configuration/Tabs/WitConfigurationComposerTab.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/Data/Configuration/WitComposerDataRefresher.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Features/Composer/Composer/Lib/Wit.ai/Features/composer/Scripts/Editor/Drawers/WitComposerInfoPropertyDrawer.cs"
 -langversion:9.0
 /deterministic
 /optimize+

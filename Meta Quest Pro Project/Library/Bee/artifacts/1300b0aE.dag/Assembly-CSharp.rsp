@@ -129,6 +129,7 @@
 -define:PUN_2_19_OR_NEWER
 -define:FUSION_WEAVER
 -define:FUSION2
+-define:ISDK_OPENXR_HAND
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"Assets/Photon/Fusion/Assemblies/Fusion.Common.dll"
@@ -384,7 +385,10 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.BuildingBlocks.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.BuildingBlocks.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.Callbacks.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.Id.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.PlayCompanion.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.Reflection.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.Settings.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.StatusMenu.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.Tags.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.UserInterface.ref.dll"
@@ -496,9 +500,11 @@
 "Assets/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs"
 "Assets/Samples/Meta MR Utility Kit/68.0.2/Bouncing Ball/assets/BouncingBallLogic.cs"
 "Assets/Samples/Meta MR Utility Kit/68.0.2/Bouncing Ball/assets/BouncingBallMgr.cs"
+"Assets/Scripts/CoLocation/AlignmentManager.cs"
+"Assets/Scripts/CoLocation/ColocationManager.cs"
 "Assets/Scripts/ControllerDataDisplay.cs"
 "Assets/Scripts/EnableXR.cs"
-"Assets/Scripts/LogHandler.cs"
+"Assets/Scripts/Logging/LogHandler.cs"
 "Assets/Scripts/Network/JoinGameManager.cs"
 "Assets/Scripts/Network/NetworkedSphere.cs"
 "Assets/Scripts/Network/NetworkManager.cs"

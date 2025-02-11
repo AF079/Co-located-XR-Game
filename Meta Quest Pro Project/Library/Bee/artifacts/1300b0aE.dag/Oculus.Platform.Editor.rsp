@@ -126,6 +126,7 @@
 -define:PUN_2_19_OR_NEWER
 -define:FUSION_WEAVER
 -define:FUSION2
+-define:ISDK_OPENXR_HAND
 -define:USING_XR_MANAGEMENT
 -define:USING_XR_SDK_OCULUS
 -define:OVR_UNITY_PACKAGE_MANAGER
@@ -375,14 +376,14 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Library/PackageCache/com.meta.xr.sdk.platform@69.0.0/Editor/AssemblyInfo.cs"
-"Library/PackageCache/com.meta.xr.sdk.platform@69.0.0/Editor/BuildingBlocks/BlockDataIds.cs"
-"Library/PackageCache/com.meta.xr.sdk.platform@69.0.0/Editor/GUIHelper.cs"
-"Library/PackageCache/com.meta.xr.sdk.platform@69.0.0/Editor/HorizonProfileTokenResponse.cs"
-"Library/PackageCache/com.meta.xr.sdk.platform@69.0.0/Editor/MetaGraphVariablesParam.cs"
-"Library/PackageCache/com.meta.xr.sdk.platform@69.0.0/Editor/OculusPlatformSettingsEditor.cs"
-"Library/PackageCache/com.meta.xr.sdk.platform@69.0.0/Editor/OculusPluginUpdaterStub.cs"
-"Library/PackageCache/com.meta.xr.sdk.platform@69.0.0/Editor/OculusStandalonePlatformResponse.cs"
+"Library/PackageCache/com.meta.xr.sdk.platform@72.0.0/Editor/AssemblyInfo.cs"
+"Library/PackageCache/com.meta.xr.sdk.platform@72.0.0/Editor/BuildingBlocks/BlockDataIds.cs"
+"Library/PackageCache/com.meta.xr.sdk.platform@72.0.0/Editor/GUIHelper.cs"
+"Library/PackageCache/com.meta.xr.sdk.platform@72.0.0/Editor/HorizonProfileTokenResponse.cs"
+"Library/PackageCache/com.meta.xr.sdk.platform@72.0.0/Editor/MetaGraphVariablesParam.cs"
+"Library/PackageCache/com.meta.xr.sdk.platform@72.0.0/Editor/OculusPlatformSettingsEditor.cs"
+"Library/PackageCache/com.meta.xr.sdk.platform@72.0.0/Editor/OculusPluginUpdaterStub.cs"
+"Library/PackageCache/com.meta.xr.sdk.platform@72.0.0/Editor/OculusStandalonePlatformResponse.cs"
 -langversion:9.0
 /deterministic
 /optimize+

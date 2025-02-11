@@ -149,7 +149,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     private IEnumerator spawnBalls()
     {
         //Disable GUI
-        disableGUI();
+        //disableGUI();
         //Iterate over the number of spheres to spawn
         for (var i = 0; i < numberOfSpheres; i++)
         {
@@ -284,7 +284,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         transformationMatrix = new float[,]{ { xB.x,   xB.y,   xB.z },
                                      { yB.x,      yB.y,      yB.z },
                                      { zB.x, zB.y, zB.z } };
-        disableGUI();
+        //disableGUI();
     }
 
     //Function that multiplies matrix m and vector v
@@ -336,8 +336,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         if (PhotonNetwork.IsMasterClient && (!regOrigin || !regX || !regY || !regZ)) //All points must be registered
         {
-            registerPoints(); //There are still points to be registrered so call this function
-            //autoRegisterPoints(); //uncomment for testing
+            //registerPoints(); //There are still points to be registrered so call this function
+            test_autoRegisterPoints(); //uncomment for testing
 
         }
 

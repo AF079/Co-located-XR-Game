@@ -129,6 +129,7 @@
 -define:PUN_2_19_OR_NEWER
 -define:FUSION_WEAVER
 -define:FUSION2
+-define:ISDK_OPENXR_HAND
 -define:OVR_UNITY_PACKAGE_MANAGER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
@@ -364,15 +365,15 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Android/AndroidServiceConnection.cs"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Android/BaseAndriodConnectionImpl.cs"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Android/PlatformLogger/VoiceSDKConsoleLoggerImpl.cs"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Android/PlatformLogger/VoiceSDKLoggerBinding.cs"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Android/PlatformLogger/VoiceSDKPlatformLoggerImpl.cs"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Interfaces/IConnection.cs"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Interfaces/IVoiceSDKLogger.cs"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Utility/ArrayElementTitleAttribute.cs"
-"Library/PackageCache/com.meta.xr.sdk.voice@69.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Utility/DateTimeUtility.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Android/AndroidServiceConnection.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Android/BaseAndriodConnectionImpl.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Android/PlatformLogger/VoiceSDKConsoleLoggerImpl.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Android/PlatformLogger/VoiceSDKLoggerBinding.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Android/PlatformLogger/VoiceSDKPlatformLoggerImpl.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Interfaces/IConnection.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Interfaces/IVoiceSDKLogger.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Utility/ArrayElementTitleAttribute.cs"
+"Library/PackageCache/com.meta.xr.sdk.voice@71.0.0/Lib/PlatformCompatibility/Scripts/Runtime/Utility/DateTimeUtility.cs"
 -langversion:9.0
 /deterministic
 /optimize+

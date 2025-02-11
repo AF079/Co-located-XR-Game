@@ -408,7 +408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &33762617
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2141,7 +2141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &178385198
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4737,7 +4737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185fdc6613fd44641b8416ae2b033283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 
 --- !u!4 &447541725
 Transform:
   m_ObjectHideFlags: 0
@@ -6144,7 +6143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &556907058
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6337,7 +6336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 984354080134106425, guid: c2e00db6d2dfa42ac8d821db8d493a44, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8047981335285221976, guid: c2e00db6d2dfa42ac8d821db8d493a44, type: 3}
       propertyPath: m_RootOrder
@@ -7233,7 +7232,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -7266,7 +7265,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -7687,7 +7686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &689100881
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14978,7 +14977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5456522116536683071, guid: cee191920b8eb41b0960b1082a393a3e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15819,7 +15818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &1516482858
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20054,9 +20053,9 @@ MonoBehaviour:
   vectorsTxt: {fileID: 2773915104791251263}
   tmpText: {fileID: 4623865477673672862}
   origin: {fileID: 6510372493486423055}
-  up: {fileID: 7810547044365727446}
-  side: {fileID: 6205910818276609629}
-  forward: {fileID: 8402442254387364361}
+  yUnitVector: {fileID: 7810547044365727446}
+  xUnitVector: {fileID: 6205910818276609629}
+  zUnitVector: {fileID: 8402442254387364361}
 --- !u!114 &1945698213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23082,7 +23081,7 @@ GameObject:
   - component: {fileID: 7783252364455431353}
   - component: {fileID: 8929327648272139219}
   m_Layer: 0
-  m_Name: Side
+  m_Name: X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23515,7 +23514,7 @@ GameObject:
   - component: {fileID: 4220105379830362312}
   - component: {fileID: 8399322972944127933}
   m_Layer: 0
-  m_Name: Up
+  m_Name: Y
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23733,7 +23732,7 @@ GameObject:
   - component: {fileID: 7427606667645573027}
   - component: {fileID: 6618636057282369764}
   m_Layer: 0
-  m_Name: Forward
+  m_Name: Z
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

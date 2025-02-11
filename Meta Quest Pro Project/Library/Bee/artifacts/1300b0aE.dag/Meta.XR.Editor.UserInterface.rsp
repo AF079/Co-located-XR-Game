@@ -126,6 +126,7 @@
 -define:PUN_2_19_OR_NEWER
 -define:FUSION_WEAVER
 -define:FUSION2
+-define:ISDK_OPENXR_HAND
 -define:OVR_UNITY_PACKAGE_MANAGER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
@@ -366,17 +367,22 @@
 -r:"Library/PackageCache/com.unity.visualscripting@1.9.4/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@1.9.4/Editor/VisualScripting.Core/EditorAssetResources/Unity.VisualScripting.TextureAssets.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@1.9.4/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/Meta.XR.Editor.Id.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/Oculus.VR.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEditor.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Library/PackageCache/com.meta.xr.sdk.core@69.0.0/Editor/Utils/UserInterface/AnimatedContent.cs"
-"Library/PackageCache/com.meta.xr.sdk.core@69.0.0/Editor/Utils/UserInterface/AssemblyInfo.cs"
-"Library/PackageCache/com.meta.xr.sdk.core@69.0.0/Editor/Utils/UserInterface/Styles.cs"
-"Library/PackageCache/com.meta.xr.sdk.core@69.0.0/Editor/Utils/UserInterface/TextureContent.cs"
-"Library/PackageCache/com.meta.xr.sdk.core@69.0.0/Editor/Utils/UserInterface/Utils.cs"
+"Library/PackageCache/com.meta.xr.sdk.core@72.0.0/Editor/Utils/UserInterface/AnimatedContent.cs"
+"Library/PackageCache/com.meta.xr.sdk.core@72.0.0/Editor/Utils/UserInterface/AssemblyInfo.cs"
+"Library/PackageCache/com.meta.xr.sdk.core@72.0.0/Editor/Utils/UserInterface/HoverHelper.cs"
+"Library/PackageCache/com.meta.xr.sdk.core@72.0.0/Editor/Utils/UserInterface/Link.cs"
+"Library/PackageCache/com.meta.xr.sdk.core@72.0.0/Editor/Utils/UserInterface/Styles.cs"
+"Library/PackageCache/com.meta.xr.sdk.core@72.0.0/Editor/Utils/UserInterface/Telemetry.cs"
+"Library/PackageCache/com.meta.xr.sdk.core@72.0.0/Editor/Utils/UserInterface/TextureContent.cs"
+"Library/PackageCache/com.meta.xr.sdk.core@72.0.0/Editor/Utils/UserInterface/Utils.cs"
 -langversion:9.0
 /deterministic
 /optimize+

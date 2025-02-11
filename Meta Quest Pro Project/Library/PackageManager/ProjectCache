@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638692554784115306
-    m_Hash: 1728953346
+      ticks: 638742791748296758
+    m_Hash: 4199173609
   m_LockFileStatus:
     m_FilePath: C:/Users/mcshr/Co-located-XR-Game/Meta Quest Pro Project/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638692554784147139
-    m_Hash: 1256879128
+      ticks: 638742791748340162
+    m_Hash: 1554799947
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,12 +22,12 @@ m_LocalPackages:
 m_ProjectPath: C:/Users/mcshr/Co-located-XR-Game/Meta Quest Pro Project/Packages
 m_EditorVersion: 2022.3.46f1 (8e9b8558c41a)
 m_ResolvedPackages:
-- packageId: com.meta.xr.sdk.all@69.0.0
+- packageId: com.meta.xr.sdk.all@72.0.0
   testable: 0
   isDirectDependency: 1
-  version: 69.0.0
+  version: 72.0.0
   source: 1
-  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.sdk.all@69.0.0
+  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.sdk.all@72.0.0
   assetPath: Packages/com.meta.xr.sdk.all
   name: com.meta.xr.sdk.all
   displayName: Meta XR All-in-One SDK
@@ -57,6 +57,7 @@ m_ResolvedPackages:
     - 69.0.0
     - 69.0.1
     - 71.0.0
+    - 72.0.0
     compatible:
     - 59.0.0
     - 60.0.0
@@ -72,40 +73,43 @@ m_ResolvedPackages:
     - 69.0.0
     - 69.0.1
     - 71.0.0
+    - 72.0.0
     recommended: 
     deprecated: []
   dependencies:
   - name: com.meta.xr.sdk.core
-    version: 69.0.0
+    version: 72.0.0
   - name: com.meta.xr.sdk.audio
-    version: 69.0.0
+    version: 72.0.0
   - name: com.meta.xr.sdk.voice
-    version: 69.0.0
+    version: 71.0.0
   - name: com.meta.xr.simulator
-    version: 69.0.0
+    version: 72.0.0
   - name: com.meta.xr.sdk.haptics
-    version: 69.0.0
+    version: 72.0.0
   - name: com.meta.xr.mrutilitykit
-    version: 69.0.0
+    version: 72.0.0
   - name: com.meta.xr.sdk.platform
-    version: 69.0.0
+    version: 72.0.0
   - name: com.meta.xr.sdk.interaction
-    version: 69.0.0
+    version: 72.0.0
   - name: com.meta.xr.sdk.interaction.ovr
-    version: 69.0.1
+    version: 72.0.0
   resolvedDependencies:
   - name: com.meta.xr.sdk.core
-    version: 69.0.0
+    version: 72.0.0
   - name: com.meta.xr.sdk.audio
-    version: 69.0.0
+    version: 72.0.0
   - name: com.meta.xr.sdk.voice
-    version: 69.0.0
+    version: 71.0.0
   - name: com.meta.xr.simulator
-    version: 69.0.0
+    version: 72.0.0
+  - name: com.unity.editorcoroutines
+    version: 1.0.0
   - name: com.meta.xr.sdk.haptics
-    version: 69.0.0
+    version: 72.0.0
   - name: com.meta.xr.mrutilitykit
-    version: 69.0.0
+    version: 72.0.0
   - name: com.unity.textmeshpro
     version: 3.0.6
   - name: com.unity.ugui
@@ -121,15 +125,15 @@ m_ResolvedPackages:
   - name: com.unity.nuget.newtonsoft-json
     version: 3.2.1
   - name: com.meta.xr.sdk.platform
-    version: 69.0.0
+    version: 72.0.0
   - name: com.meta.xr.sdk.interaction
-    version: 69.0.0
+    version: 72.0.0
   - name: com.meta.xr.sdk.interaction.ovr
-    version: 69.0.1
+    version: 72.0.0
   keywords:
+  - Quest
   - XR
   - Oculus
-  - Quest
   - SDK
   - Meta
   registry:
@@ -142,7 +146,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 1
-  datePublishedTicks: 638642741597940000
+  datePublishedTicks: 638736031706510000
   documentationUrl: https://developer.oculus.com/documentation/unity/
   hasRepository: 0
   repository:
@@ -202,9 +206,11 @@ m_ResolvedPackages:
     version: 66.0.1
   resolvedDependencies:
   - name: com.meta.xr.sdk.core
-    version: 69.0.0
+    version: 72.0.0
   - name: com.meta.xr.simulator
-    version: 69.0.0
+    version: 72.0.0
+  - name: com.unity.editorcoroutines
+    version: 1.0.0
   keywords:
   - XrSim
   - Quest
@@ -515,9 +521,11 @@ m_ResolvedPackages:
     - 1.10.1
     - 1.10.2
     - 1.11.4
+    - 1.11.5
     compatible:
     - 1.11.4
-    recommended: 1.11.4
+    - 1.11.5
+    recommended: 1.11.5
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -854,6 +862,7 @@ m_ResolvedPackages:
     - 1.8.5
     - 1.8.6
     - 1.8.7
+    - 1.8.8
     compatible:
     - 1.7.6
     - 1.8.0
@@ -864,6 +873,7 @@ m_ResolvedPackages:
     - 1.8.5
     - 1.8.6
     - 1.8.7
+    - 1.8.8
     recommended: 1.7.6
     deprecated: []
   dependencies:
@@ -1163,6 +1173,7 @@ m_ResolvedPackages:
     - 3.0.5
     - 3.0.6
     - 3.0.7
+    - 3.1.0-pre.1
     compatible:
     - 2.6.3
     - 3.0.0-pre.1
@@ -1174,6 +1185,7 @@ m_ResolvedPackages:
     - 3.0.5
     - 3.0.6
     - 3.0.7
+    - 3.1.0-pre.1
     recommended: 2.6.3
     deprecated: []
   dependencies:
@@ -1497,11 +1509,13 @@ m_ResolvedPackages:
     - 4.3.0-pre.1
     - 4.3.0
     - 4.4.0
+    - 4.5.0
     compatible:
     - 4.2.0
     - 4.3.0-pre.1
     - 4.3.0
     - 4.4.0
+    - 4.5.0
     recommended: 4.2.0
     deprecated: []
   dependencies:
@@ -3541,10 +3555,12 @@ m_ResolvedPackages:
     - 2.1.9
     - 2.1.10
     - 2.1.11
+    - 2.1.12
     compatible:
     - 2.1.10
     - 2.1.11
-    recommended: 2.1.11
+    - 2.1.12
+    recommended: 2.1.12
     deprecated: []
   dependencies:
   - name: com.unity.modules.vr
@@ -3667,6 +3683,7 @@ m_ResolvedPackages:
     - 1.11.0
     - 1.11.1
     - 1.11.2
+    - 1.12.0
     compatible:
     - 1.7.0
     - 1.8.0-pre.1
@@ -3679,6 +3696,7 @@ m_ResolvedPackages:
     - 1.11.0
     - 1.11.1
     - 1.11.2
+    - 1.12.0
     recommended: 1.7.0
     deprecated: []
   dependencies:
@@ -3855,12 +3873,16 @@ m_ResolvedPackages:
     - 2.4.0-exp.2
     - 2.4.0-exp.3
     - 2.4.0
+    - 2.5.0
+    - 2.5.1
     compatible:
     - 2.3.0
     - 2.4.0-exp.1
     - 2.4.0-exp.2
     - 2.4.0-exp.3
     - 2.4.0
+    - 2.5.0
+    - 2.5.1
     recommended: 2.3.0
     deprecated: []
   dependencies:
@@ -4278,9 +4300,11 @@ m_ResolvedPackages:
     - 1.1.0
     - 1.1.1
     - 1.2.2
+    - 1.2.3
     compatible:
     - 1.2.2
-    recommended: 1.2.2
+    - 1.2.3
+    recommended: 1.2.3
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -4559,12 +4583,12 @@ m_ResolvedPackages:
   isDeprecated: 0
   deprecationMessage: 
   fingerprint: 
-- packageId: com.meta.xr.sdk.core@69.0.0
+- packageId: com.meta.xr.sdk.core@72.0.0
   testable: 0
   isDirectDependency: 0
-  version: 69.0.0
+  version: 72.0.0
   source: 1
-  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.sdk.core@69.0.0
+  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.sdk.core@72.0.0
   assetPath: Packages/com.meta.xr.sdk.core
   name: com.meta.xr.sdk.core
   displayName: Meta XR Core SDK
@@ -4595,6 +4619,7 @@ m_ResolvedPackages:
     - 69.0.0
     - 69.0.1
     - 71.0.0
+    - 72.0.0
     compatible:
     - 59.0.0
     - 60.0.0
@@ -4611,17 +4636,18 @@ m_ResolvedPackages:
     - 69.0.0
     - 69.0.1
     - 71.0.0
+    - 72.0.0
     recommended: 
     deprecated: []
   dependencies: []
   resolvedDependencies: []
   keywords:
-  - Meta
+  - XR
   - Quest
   - Oculus
-  - SDK
-  - XR
   - Utilities
+  - Meta
+  - SDK
   registry:
     id: main
     name: 
@@ -4632,7 +4658,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 1
-  datePublishedTicks: 638641085033960000
+  datePublishedTicks: 638732763638900000
   documentationUrl: https://developer.oculus.com/documentation/unity/
   hasRepository: 0
   repository:
@@ -4649,12 +4675,12 @@ m_ResolvedPackages:
   isDeprecated: 0
   deprecationMessage: 
   fingerprint: 
-- packageId: com.meta.xr.sdk.audio@69.0.0
+- packageId: com.meta.xr.sdk.audio@72.0.0
   testable: 0
   isDirectDependency: 0
-  version: 69.0.0
+  version: 72.0.0
   source: 1
-  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.sdk.audio@69.0.0
+  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.sdk.audio@72.0.0
   assetPath: Packages/com.meta.xr.sdk.audio
   name: com.meta.xr.sdk.audio
   displayName: Meta XR Audio SDK
@@ -4683,6 +4709,7 @@ m_ResolvedPackages:
     - 68.0.0
     - 69.0.0
     - 71.0.0
+    - 72.0.0
     compatible:
     - 56.0.0-preview
     - 57.0.0-preview
@@ -4696,17 +4723,18 @@ m_ResolvedPackages:
     - 68.0.0
     - 69.0.0
     - 71.0.0
+    - 72.0.0
     recommended: 
     deprecated: []
   dependencies: []
   resolvedDependencies: []
   keywords:
-  - XR
-  - Oculus
-  - Quest
-  - Meta
   - SDK
   - Audio
+  - Oculus
+  - Meta
+  - Quest
+  - XR
   registry:
     id: main
     name: 
@@ -4717,7 +4745,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 1
-  datePublishedTicks: 638641105243410000
+  datePublishedTicks: 638732746370350000
   documentationUrl: https://developer.oculus.com/documentation/unity/meta-xr-audio-sdk-unity/
   hasRepository: 0
   repository:
@@ -4734,12 +4762,12 @@ m_ResolvedPackages:
   isDeprecated: 0
   deprecationMessage: 
   fingerprint: 
-- packageId: com.meta.xr.sdk.voice@69.0.0
+- packageId: com.meta.xr.sdk.voice@71.0.0
   testable: 0
   isDirectDependency: 0
-  version: 69.0.0
+  version: 71.0.0
   source: 1
-  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.sdk.voice@69.0.0
+  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.sdk.voice@71.0.0
   assetPath: Packages/com.meta.xr.sdk.voice
   name: com.meta.xr.sdk.voice
   displayName: Meta - Voice SDK - Immersive Voice Commands
@@ -4783,9 +4811,9 @@ m_ResolvedPackages:
   dependencies: []
   resolvedDependencies: []
   keywords:
+  - SDK
   - Voice
   - Meta
-  - SDK
   registry:
     id: main
     name: 
@@ -4796,7 +4824,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 1
-  datePublishedTicks: 638641102235560000
+  datePublishedTicks: 638678385826570000
   documentationUrl: https://developer.oculus.com/documentation/unity/voice-sdk-overview/
   hasRepository: 0
   repository:
@@ -4813,12 +4841,12 @@ m_ResolvedPackages:
   isDeprecated: 0
   deprecationMessage: 
   fingerprint: 
-- packageId: com.meta.xr.simulator@69.0.0
+- packageId: com.meta.xr.simulator@72.0.0
   testable: 0
   isDirectDependency: 0
-  version: 69.0.0
+  version: 72.0.0
   source: 1
-  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.simulator@69.0.0
+  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.simulator@72.0.0
   assetPath: Packages/com.meta.xr.simulator
   name: com.meta.xr.simulator
   displayName: Meta XR Simulator
@@ -4844,6 +4872,7 @@ m_ResolvedPackages:
     - 68.0.0
     - 69.0.0
     - 71.0.0
+    - 72.0.0
     compatible:
     - 57.0.0
     - 59.0.0
@@ -4855,15 +4884,20 @@ m_ResolvedPackages:
     - 68.0.0
     - 69.0.0
     - 71.0.0
+    - 72.0.0
     recommended: 
     deprecated: []
-  dependencies: []
-  resolvedDependencies: []
+  dependencies:
+  - name: com.unity.editorcoroutines
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.editorcoroutines
+    version: 1.0.0
   keywords:
+  - XrSim
   - Quest
   - Meta
   - Oculus
-  - XrSim
   registry:
     id: main
     name: 
@@ -4874,7 +4908,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 1
-  datePublishedTicks: 638641095223870000
+  datePublishedTicks: 638732747792900000
   documentationUrl: https://developer.oculus.com/documentation/unity/xrsim-unity
   hasRepository: 0
   repository:
@@ -4891,12 +4925,12 @@ m_ResolvedPackages:
   isDeprecated: 0
   deprecationMessage: 
   fingerprint: 
-- packageId: com.meta.xr.sdk.haptics@69.0.0
+- packageId: com.meta.xr.sdk.haptics@72.0.0
   testable: 0
   isDirectDependency: 0
-  version: 69.0.0
+  version: 72.0.0
   source: 1
-  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.sdk.haptics@69.0.0
+  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.sdk.haptics@72.0.0
   assetPath: Packages/com.meta.xr.sdk.haptics
   name: com.meta.xr.sdk.haptics
   displayName: Meta XR Haptics SDK
@@ -4925,6 +4959,7 @@ m_ResolvedPackages:
     - 69.0.0
     - 69.0.1
     - 71.0.0
+    - 72.0.0
     compatible:
     - 60.0.0
     - 62.0.0
@@ -4939,21 +4974,22 @@ m_ResolvedPackages:
     - 69.0.0
     - 69.0.1
     - 71.0.0
+    - 72.0.0
     recommended: 
     deprecated: []
   dependencies:
   - name: com.meta.xr.sdk.core
-    version: 69.0.0
+    version: 72.0.0
   resolvedDependencies:
   - name: com.meta.xr.sdk.core
-    version: 69.0.0
+    version: 72.0.0
   keywords:
   - Haptics
-  - XR
-  - Quest
-  - SDK
   - Oculus
   - Meta
+  - SDK
+  - Quest
+  - XR
   registry:
     id: main
     name: 
@@ -4964,7 +5000,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 1
-  datePublishedTicks: 638641129296640000
+  datePublishedTicks: 638733666788070000
   documentationUrl: https://developer.oculus.com/documentation/unity/unity-haptics-sdk/
   hasRepository: 0
   repository:
@@ -4981,12 +5017,12 @@ m_ResolvedPackages:
   isDeprecated: 0
   deprecationMessage: 
   fingerprint: 
-- packageId: com.meta.xr.mrutilitykit@69.0.0
+- packageId: com.meta.xr.mrutilitykit@72.0.0
   testable: 0
   isDirectDependency: 0
-  version: 69.0.0
+  version: 72.0.0
   source: 1
-  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.mrutilitykit@69.0.0
+  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.mrutilitykit@72.0.0
   assetPath: Packages/com.meta.xr.mrutilitykit
   name: com.meta.xr.mrutilitykit
   displayName: Meta MR Utility Kit
@@ -5015,6 +5051,7 @@ m_ResolvedPackages:
     - 69.0.0
     - 69.0.1
     - 71.0.0
+    - 72.0.0
     compatible:
     - 60.0.0
     - 62.0.0
@@ -5029,11 +5066,12 @@ m_ResolvedPackages:
     - 69.0.0
     - 69.0.1
     - 71.0.0
+    - 72.0.0
     recommended: 
     deprecated: []
   dependencies:
   - name: com.meta.xr.sdk.core
-    version: 69.0.0
+    version: 72.0.0
   - name: com.unity.textmeshpro
     version: 3.0.6
   - name: com.unity.ai.navigation
@@ -5042,7 +5080,7 @@ m_ResolvedPackages:
     version: 3.0.2
   resolvedDependencies:
   - name: com.meta.xr.sdk.core
-    version: 69.0.0
+    version: 72.0.0
   - name: com.unity.textmeshpro
     version: 3.0.6
   - name: com.unity.ugui
@@ -5069,7 +5107,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 1
-  datePublishedTicks: 638641139429000000
+  datePublishedTicks: 638733665008220000
   documentationUrl: https://developer.oculus.com/documentation/unity/unity-mr-utility-kit-overview
   hasRepository: 0
   repository:
@@ -5086,12 +5124,12 @@ m_ResolvedPackages:
   isDeprecated: 0
   deprecationMessage: 
   fingerprint: 
-- packageId: com.meta.xr.sdk.platform@69.0.0
+- packageId: com.meta.xr.sdk.platform@72.0.0
   testable: 0
   isDirectDependency: 0
-  version: 69.0.0
+  version: 72.0.0
   source: 1
-  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.sdk.platform@69.0.0
+  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.sdk.platform@72.0.0
   assetPath: Packages/com.meta.xr.sdk.platform
   name: com.meta.xr.sdk.platform
   displayName: Meta XR Platform SDK
@@ -5121,6 +5159,7 @@ m_ResolvedPackages:
     - 68.0.0
     - 69.0.0
     - 71.0.0
+    - 72.0.0
     compatible:
     - 56.0.0-preview
     - 57.0.0-preview
@@ -5135,6 +5174,7 @@ m_ResolvedPackages:
     - 68.0.0
     - 69.0.0
     - 71.0.0
+    - 72.0.0
     recommended: 
     deprecated: []
   dependencies:
@@ -5148,12 +5188,12 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   keywords:
-  - SDK
-  - Platform
-  - Quest
-  - Oculus
-  - XR
   - Meta
+  - Oculus
+  - Platform
+  - SDK
+  - Quest
+  - XR
   registry:
     id: main
     name: 
@@ -5164,7 +5204,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 1
-  datePublishedTicks: 638641097831060000
+  datePublishedTicks: 638732745038690000
   documentationUrl: https://developer.oculus.com/documentation/unity/ps-platform-intro/
   hasRepository: 0
   repository:
@@ -5181,12 +5221,12 @@ m_ResolvedPackages:
   isDeprecated: 0
   deprecationMessage: 
   fingerprint: 
-- packageId: com.meta.xr.sdk.interaction@69.0.0
+- packageId: com.meta.xr.sdk.interaction@72.0.0
   testable: 0
   isDirectDependency: 0
-  version: 69.0.0
+  version: 72.0.0
   source: 1
-  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.sdk.interaction@69.0.0
+  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.sdk.interaction@72.0.0
   assetPath: Packages/com.meta.xr.sdk.interaction
   name: com.meta.xr.sdk.interaction
   displayName: Meta XR Interaction SDK Essentials
@@ -5218,6 +5258,7 @@ m_ResolvedPackages:
     - 69.0.0
     - 69.0.1
     - 71.0.0
+    - 72.0.0
     compatible:
     - 56.0.0-preview
     - 57.0.0-preview
@@ -5235,6 +5276,7 @@ m_ResolvedPackages:
     - 69.0.0
     - 69.0.1
     - 71.0.0
+    - 72.0.0
     recommended: 
     deprecated: []
   dependencies:
@@ -5252,11 +5294,11 @@ m_ResolvedPackages:
   - name: com.unity.textmeshpro
     version: 3.0.6
   keywords:
-  - Meta
-  - SDK
-  - Quest
   - Interaction
   - Oculus
+  - Quest
+  - SDK
+  - Meta
   - XR
   registry:
     id: main
@@ -5268,7 +5310,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 1
-  datePublishedTicks: 638641108109790000
+  datePublishedTicks: 638732765102690000
   documentationUrl: https://developer.oculus.com/documentation/unity/unity-isdk-interaction-sdk-overview/
   hasRepository: 0
   repository:
@@ -5285,12 +5327,12 @@ m_ResolvedPackages:
   isDeprecated: 0
   deprecationMessage: 
   fingerprint: 
-- packageId: com.meta.xr.sdk.interaction.ovr@69.0.1
+- packageId: com.meta.xr.sdk.interaction.ovr@72.0.0
   testable: 0
   isDirectDependency: 0
-  version: 69.0.1
+  version: 72.0.0
   source: 1
-  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.sdk.interaction.ovr@69.0.1
+  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.meta.xr.sdk.interaction.ovr@72.0.0
   assetPath: Packages/com.meta.xr.sdk.interaction.ovr
   name: com.meta.xr.sdk.interaction.ovr
   displayName: "Meta XR Interaction \u200BSDK"
@@ -5322,6 +5364,7 @@ m_ResolvedPackages:
     - 69.0.1
     - 69.0.2
     - 71.0.0
+    - 72.0.0
     compatible:
     - 56.0.0-preview
     - 57.0.0-preview
@@ -5339,18 +5382,19 @@ m_ResolvedPackages:
     - 69.0.1
     - 69.0.2
     - 71.0.0
+    - 72.0.0
     recommended: 
     deprecated: []
   dependencies:
   - name: com.meta.xr.sdk.core
-    version: 69.0.0
+    version: 72.0.0
   - name: com.meta.xr.sdk.interaction
-    version: 69.0.0
+    version: 72.0.0
   resolvedDependencies:
   - name: com.meta.xr.sdk.core
-    version: 69.0.0
+    version: 72.0.0
   - name: com.meta.xr.sdk.interaction
-    version: 69.0.0
+    version: 72.0.0
   - name: com.unity.ugui
     version: 1.0.0
   - name: com.unity.modules.ui
@@ -5360,14 +5404,14 @@ m_ResolvedPackages:
   - name: com.unity.textmeshpro
     version: 3.0.6
   keywords:
-  - Samples
   - Interaction
-  - XR
+  - Samples
   - Quest
-  - SDK
-  - OVR
-  - Oculus
   - Meta
+  - XR
+  - Oculus
+  - OVR
+  - SDK
   registry:
     id: main
     name: 
@@ -5378,7 +5422,7 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 1
-  datePublishedTicks: 638642417663550000
+  datePublishedTicks: 638733659582750000
   documentationUrl: https://developer.oculus.com/documentation/unity/unity-isdk-interaction-sdk-overview/
   hasRepository: 0
   repository:
