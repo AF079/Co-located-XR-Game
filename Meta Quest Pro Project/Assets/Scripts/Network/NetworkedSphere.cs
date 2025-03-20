@@ -48,7 +48,7 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
             Debug.Log("NO PHOTON VIEW!!!!");
         }
         PhotonNetwork.AddCallbackTarget(this);
-        
+
     }
 
     private void OnDestroy()
@@ -59,11 +59,11 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
     // Start is called before the first frame update
     void Start()
     {
-       /* Vector3 startForce = new Vector3(UnityEngine.Random.Range(-2, 2), 0, UnityEngine.Random.Range(-2, 2)); //Random direction
-        rb.AddForce(startForce, ForceMode.Impulse); //Apply random force in x and z direction*/
-      
+        /* Vector3 startForce = new Vector3(UnityEngine.Random.Range(-2, 2), 0, UnityEngine.Random.Range(-2, 2)); //Random direction
+         rb.AddForce(startForce, ForceMode.Impulse); //Apply random force in x and z direction*/
+
         fixedDeltaTime = Time.fixedDeltaTime;
-        Time.timeScale = 0.15f; //Slow down time
+        Time.timeScale = 0.01f; //Slow down time
         Logger = GameObject.Find("Logger");
         if (PhotonNetwork.IsMasterClient)
         {
@@ -74,7 +74,7 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
         {
             targetPosition = rb.position;
         }
-        
+
     }
     // Update is called once per frame
     void Update()
@@ -87,7 +87,7 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
 
         }
 
-        if(PhotonNetwork.IsMasterClient && !hasLogged && numPopped >= NetworkManager.numberOfSpheres) //If data has not been logged yet and all balls have been popped
+        if (PhotonNetwork.IsMasterClient && !hasLogged && numPopped >= NetworkManager.numberOfSpheres) //If data has not been logged yet and all balls have been popped
         {
             //Log data
             hasLogged = true;
@@ -138,7 +138,8 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
         {
             yield return new WaitForSeconds(baseLatency + UnityEngine.Random.Range(-jitterIntensity, jitterIntensity)); //Wait for n (ms). Currently 200ms
 
-            if (UnityEngine.Random.value > chanceOfLatency) { //If should add latency
+            if (UnityEngine.Random.value > chanceOfLatency)
+            { //If should add latency
                 positionQueue.Enqueue(rb.position); // Add current position to queue
             }
 
@@ -151,57 +152,57 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
             }
         }
     }
-   
+
     //Send and receive callback function. Master client sends updated positions using transformation matrix to Non-Master Client.
     //Non-Master Client updates position based on what it receives
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
 
-/*        if (PhotonNetwork.IsMasterClient)
-        {
+        /*        if (PhotonNetwork.IsMasterClient)
+                {
 
-            if (stream.IsWriting) //Only Master Client can write over channel
+                    if (stream.IsWriting) //Only Master Client can write over channel
 
-            {
-                Vector3 localPosition = rb.position - NetworkManager.originBinA; //Express the translated sphere position in the master client coordinate system by subtracting the registered origin
+                    {
+                        Vector3 localPosition = rb.position - NetworkManager.originBinA; //Express the translated sphere position in the master client coordinate system by subtracting the registered origin
 
-                //Express the unit vectors relative to the registered origin. Then normalize to keep them as unit vectors. These are the basis vectors.
-                //Remember any v' = a*xB + b*yB + c*zB
-                Vector3 yB = (NetworkManager.yBinA - NetworkManager.originBinA).normalized; 
-                Vector3 zB = (NetworkManager.zBinA - NetworkManager.originBinA).normalized;
-                Vector3 xB = (NetworkManager.xBinA - NetworkManager.originBinA).normalized;
+                        //Express the unit vectors relative to the registered origin. Then normalize to keep them as unit vectors. These are the basis vectors.
+                        //Remember any v' = a*xB + b*yB + c*zB
+                        Vector3 yB = (NetworkManager.yBinA - NetworkManager.originBinA).normalized; 
+                        Vector3 zB = (NetworkManager.zBinA - NetworkManager.originBinA).normalized;
+                        Vector3 xB = (NetworkManager.xBinA - NetworkManager.originBinA).normalized;
 
-                //Construct transformation matrix
-                float[,] transformationMatrix = new float[,]{ { xB.x,   xB.y,   xB.z },
-                                     { yB.x,      yB.y,      yB.z },
-                                     { zB.x, zB.y, zB.z } };
+                        //Construct transformation matrix
+                        float[,] transformationMatrix = new float[,]{ { xB.x,   xB.y,   xB.z },
+                                             { yB.x,      yB.y,      yB.z },
+                                             { zB.x, zB.y, zB.z } };
 
-                //Transform the translated sphere position by doing M*v (matrix * vector)
-                Vector3 transformedPosition = NetworkManager.MatMul(transformationMatrix, localPosition);
-                
-                //Send position over photon network
-                stream.SendNext(transformedPosition);
-                //Send translated and transformed velocity
-                //Commented out not currently using
-                //stream.SendNext(NetworkManager.MatMul(transformationMatrix, rb.velocity - NetworkManager.originBinA));
+                        //Transform the translated sphere position by doing M*v (matrix * vector)
+                        Vector3 transformedPosition = NetworkManager.MatMul(transformationMatrix, localPosition);
 
-            }
-        }
-        else if (!PhotonNetwork.IsMasterClient && stream.IsReading) //Only Non-Master Client can receive on channel
-        {
-            try
-            {
+                        //Send position over photon network
+                        stream.SendNext(transformedPosition);
+                        //Send translated and transformed velocity
+                        //Commented out not currently using
+                        //stream.SendNext(NetworkManager.MatMul(transformationMatrix, rb.velocity - NetworkManager.originBinA));
 
-                targetPosition = (Vector3)stream.ReceiveNext(); //Set target position to postition sent by master client
+                    }
+                }
+                else if (!PhotonNetwork.IsMasterClient && stream.IsReading) //Only Non-Master Client can receive on channel
+                {
+                    try
+                    {
 
-                //Commented out not currently using
-                //Vector3 receivedVelocity = (Vector3)stream.ReceiveNext(); //Set received velocity
-            }
-            catch (Exception e)
-            {
-                //Debug.Log("ERROR: " + e);
-            }
-        }*/
+                        targetPosition = (Vector3)stream.ReceiveNext(); //Set target position to postition sent by master client
+
+                        //Commented out not currently using
+                        //Vector3 receivedVelocity = (Vector3)stream.ReceiveNext(); //Set received velocity
+                    }
+                    catch (Exception e)
+                    {
+                        //Debug.Log("ERROR: " + e);
+                    }
+                }*/
 
     }
 
@@ -212,7 +213,7 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
         //When user touches the sphere 
         if (!other.CompareTag("tBall"))
         {
-           
+
             isTouching = true;
         }
     }
@@ -231,9 +232,9 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
                     //store name of user
                     string myName = PhotonNetwork.LocalPlayer.NickName;
                     photonView.RPC("updateUserPressTimestamps", RpcTarget.All, myName, timeStamp);
-                    
+
                 }
-                else 
+                else
                 {
                     photonView.RequestOwnership(); //request ownership if the sphere does not belong to the interacting player
                 }
@@ -246,7 +247,7 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
     {
         if (!other.CompareTag("tBall"))
         {
-           
+
             isTouching = false; //reset flag
 
         }
@@ -282,7 +283,7 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
                     {
                         photonView.RPC("HideBall", RpcTarget.All); //Disable sphere
                     }
-                    
+
                 }
             }
         }
@@ -297,7 +298,7 @@ public class NetworkedSphere : MonoBehaviour, IPunOwnershipCallbacks, IPunObserv
             LogHandler.DATA += "Ball Popped at " + PhotonNetwork.Time + "\n"; //Data containing time the sphere was poppped at
             numPopped++;
         }
-        
+
         gameObject.SetActive(false); //Disable sphere
     }
 

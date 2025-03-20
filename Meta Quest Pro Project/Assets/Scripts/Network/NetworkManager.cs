@@ -165,6 +165,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             Debug.Log("SPAWNED SPHERE " + i + " AT " + sphere.transform.position);
             //Add sphere to list
             sphereList.Add(sphere);
+            
+            
+            
+          
 
         }
         spawnedSpheres = true;

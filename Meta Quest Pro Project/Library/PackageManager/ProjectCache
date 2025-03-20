@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638742791748296758
-    m_Hash: 4199173609
+      ticks: 638748810575530436
+    m_Hash: 1756736941
   m_LockFileStatus:
     m_FilePath: C:/Users/mcshr/Co-located-XR-Game/Meta Quest Pro Project/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638742791748340162
-    m_Hash: 1554799947
+      ticks: 638748810575588108
+    m_Hash: 658070013
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -479,6 +479,90 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.0.1
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+  fingerprint: 
+- packageId: com.unity.mobile.android-logcat@1.4.4
+  testable: 0
+  isDirectDependency: 1
+  version: 1.4.4
+  source: 1
+  resolvedPath: C:\Users\mcshr\Co-located-XR-Game\Meta Quest Pro Project\Library\PackageCache\com.unity.mobile.android-logcat@1.4.4
+  assetPath: Packages/com.unity.mobile.android-logcat
+  name: com.unity.mobile.android-logcat
+  displayName: Android Logcat
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: "Android Logcat package provides support for:\n - Android log messages\n
+    - Android application memory statistics\n - Input injection\n - Android Screen
+    Capture\n - Android Screen Recorder\n - Stacktrace Utility\n\nClick the 'View
+    documentation' link above for more information.\n\nThe window can be accessed
+    in Unity Editor via 'Window > Analysis > Android Logcat', or simply by pressing
+    'Alt+6' on Windows or 'Option+6' on macOS. \n\nMake sure to have Android module
+    loaded and switch to Android build target in 'Build Settings' window if the menu
+    doesn't exist."
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 0.1.5-preview
+    - 0.2.7-preview
+    - 1.0.0
+    - 1.0.1-preview
+    - 1.0.3-preview
+    - 1.1.0
+    - 1.1.1
+    - 1.2.0-preview
+    - 1.2.0
+    - 1.2.1
+    - 1.2.2
+    - 1.2.3
+    - 1.3.2
+    - 1.4.0
+    - 1.4.1
+    - 1.4.2
+    - 1.4.3
+    - 1.4.4
+    compatible:
+    - 1.4.2
+    - 1.4.3
+    - 1.4.4
+    recommended: 1.4.4
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - Mobile
+  - Android
+  - Logcat
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 638695207981140000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.mobile.android-logcat@1.4/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/com.unity.mobile.logcat.git
+    revision: a7be70627fd638630a4541312b1e93348d78089d
+    path: 
+  unityLifecycle:
+    version: 1.4.2
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -1164,6 +1248,7 @@ m_ResolvedPackages:
     - 2.5.3
     - 2.5.4
     - 2.6.3
+    - 2.6.4
     - 3.0.0-pre.1
     - 3.0.0-pre.2
     - 3.0.0
@@ -1176,6 +1261,7 @@ m_ResolvedPackages:
     - 3.1.0-pre.1
     compatible:
     - 2.6.3
+    - 2.6.4
     - 3.0.0-pre.1
     - 3.0.0-pre.2
     - 3.0.0
@@ -1186,7 +1272,7 @@ m_ResolvedPackages:
     - 3.0.6
     - 3.0.7
     - 3.1.0-pre.1
-    recommended: 2.6.3
+    recommended: 2.6.4
     deprecated: []
   dependencies:
   - name: com.unity.ugui
@@ -3684,6 +3770,7 @@ m_ResolvedPackages:
     - 1.11.1
     - 1.11.2
     - 1.12.0
+    - 1.13.0
     compatible:
     - 1.7.0
     - 1.8.0-pre.1
@@ -3697,6 +3784,7 @@ m_ResolvedPackages:
     - 1.11.1
     - 1.11.2
     - 1.12.0
+    - 1.13.0
     recommended: 1.7.0
     deprecated: []
   dependencies:
@@ -4405,6 +4493,7 @@ m_ResolvedPackages:
     - 1.4.3
     - 1.4.4
     - 1.4.5
+    - 1.4.6
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -4426,6 +4515,7 @@ m_ResolvedPackages:
     - 1.4.3
     - 1.4.4
     - 1.4.5
+    - 1.4.6
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -5610,6 +5700,7 @@ m_ResolvedPackages:
     - 2.0.3
     - 2.0.4
     - 2.0.5
+    - 2.0.6
     compatible:
     - 1.1.5
     recommended: 1.1.5

@@ -42,6 +42,7 @@ public class AlignmentManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
 
         }
+        Debug.Log("Colocation: Alignment complete.");
     }
 }
 

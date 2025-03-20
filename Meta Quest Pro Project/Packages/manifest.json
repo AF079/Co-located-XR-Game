@@ -4,6 +4,7 @@
     "com.meta.xr.simulator.samples": "66.0.1",
     "com.unity.collab-proxy": "2.5.2",
     "com.unity.feature.development": "1.0.1",
+    "com.unity.mobile.android-logcat": "1.4.4",
     "com.unity.nuget.mono-cecil": "1.10.2",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.7.6",
