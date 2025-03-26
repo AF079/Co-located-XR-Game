@@ -13,7 +13,7 @@ public class SphereGenerator : MonoBehaviour
     private Rigidbody rb;
     float fixedDeltaTime;
     float force = 5f;
-    float syncTime = 20;
+    float syncTime = 5;
 
     bool doneSync = false;
 
