@@ -1446,11 +1446,13 @@ m_ResolvedPackages:
     - 4.4.0
     - 4.4.1
     - 4.5.0
+    - 4.5.1
     compatible:
     - 4.4.0
     - 4.4.1
     - 4.5.0
-    recommended: 4.5.0
+    - 4.5.1
+    recommended: 4.5.1
     deprecated: []
   dependencies:
   - name: com.unity.modules.vr

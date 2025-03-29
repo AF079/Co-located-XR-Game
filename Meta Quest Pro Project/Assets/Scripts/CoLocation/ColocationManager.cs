@@ -15,7 +15,7 @@ public class NewBehaviourScript : NetworkBehaviour
     public override void Spawned()
     {
         base.Spawned();
-
+        Debug.Log("THIS IS WORKING");
         StartCoroutine(WaitForSceneLoad());
     }
 
@@ -32,7 +32,7 @@ public class NewBehaviourScript : NetworkBehaviour
     {
         if (Object.HasStateAuthority)
         {
-            
+
             Debug.Log("Colocation: Starting advertisement");
             AdvertiseColocationSession();
         }

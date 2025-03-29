@@ -13,10 +13,19 @@ public class SphereController : NetworkBehaviour
     void Start()
     {
         myName = "user" + Random.Range(1, 1000);
+        Debug.Log("IN SPHERE CONTROLLER " + myName);
     }
+
+    // public override void Spawned()
+    // {
+    //     base.Spawned(); // Not required, but keeps compatibility
+
+    // }
 
     public void RequestOwnership()
     {
+        if (Object == null || Runner == null)
+            return;
         if (Object != null && !Object.HasStateAuthority)
         {
             Object.RequestStateAuthority();
@@ -25,6 +34,8 @@ public class SphereController : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (Object == null || Runner == null)
+            return;
         //When user touches the sphere 
         if (!other.CompareTag("sphere"))
         {
@@ -34,6 +45,8 @@ public class SphereController : NetworkBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if (Object == null || Runner == null)
+            return;
         if (isTouching && !other.CompareTag("sphere"))
         {
             Debug.Log("INTERACTING!");
@@ -52,6 +65,8 @@ public class SphereController : NetworkBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (Object == null || Runner == null)
+            return;
         if (!other.CompareTag("sphere"))
         {
             isTouching = false;
@@ -59,7 +74,7 @@ public class SphereController : NetworkBehaviour
 
         }
     }
-    
+
     [Rpc(sources: RpcSources.StateAuthority, targets: RpcTargets.All)]
     public void RPC_updateUserPressTimestamps(string name, double timeStamp)
     {

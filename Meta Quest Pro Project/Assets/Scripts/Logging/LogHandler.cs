@@ -3,37 +3,35 @@ using UnityEngine;
 
 public class LogHandler : MonoBehaviour
 {
+    private string fileName = "MyTextFile.txt";
 
-    //Data that will be stored in log file
-    public static string DATA ="";
-    //File name
-    public static string FILE_NAME = "log.txt";
     void Start()
     {
-        //Before logging, add the latency level
-        DATA = "Latency Config: \n" +
-            "SERVER TO CLIENT LATENCY: " + NetworkManager.CLIENT_LATENCY + "\n";
+        Debug.Log("SAVING");
+        SaveText("THIS IS DATA :)");
+        Debug.Log("DONE SAVING");
     }
 
-    //Combine base path and file name: base_path/filename.txt
-    public string GetQuestFilePath(string fileName)
+    public void SaveText(string content)
     {
-        return Path.Combine("/storage/emulated/0/Documents/", fileName);
+        string path = Path.Combine(Application.persistentDataPath, fileName);
+        File.WriteAllText(path, content);
+        Debug.Log($"File saved at: {path}");
     }
 
-    
-    //Function to write data to file path
-    public void WriteToFile(string filePath)
+    public string LoadText()
     {
-        try
+        string path = Path.Combine(Application.persistentDataPath, fileName);
+        if (File.Exists(path))
         {
-           
-            File.WriteAllText(filePath, DATA);
-            Debug.Log($"File written successfully at: {filePath}");
+            string content = File.ReadAllText(path);
+            Debug.Log($"File loaded: {content}");
+            return content;
         }
-        catch (IOException e)
+        else
         {
-            Debug.LogError($"Failed to write to file: {e.Message}");
+            Debug.LogWarning("File not found!");
+            return null;
         }
     }
 }
