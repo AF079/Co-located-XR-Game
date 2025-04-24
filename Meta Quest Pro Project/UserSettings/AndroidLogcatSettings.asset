@@ -1,5 +1,5 @@
 {
-    "m_SelectedDeviceId": "2G0YC1ZF7S08M3",
+    "m_SelectedDeviceId": "2G0YC1ZF7Q0S5J",
     "m_SelectedProcess": {
         "deviceId": "",
         "name": "",
@@ -18,6 +18,12 @@
             "deviceId": "2G0YC1ZF7Q0S5J",
             "name": "com.DP_Project.XRApp",
             "processId": 12410,
+            "exited": true
+        },
+        {
+            "deviceId": "2G0YC1ZF7Q0S5J",
+            "name": "com.DP_Project.XRApp",
+            "processId": 17584,
             "exited": false
         },
         {
@@ -30,6 +36,18 @@
             "deviceId": "192.168.53.24:5555",
             "name": "com.DP_Project.XRApp",
             "processId": 14655,
+            "exited": false
+        },
+        {
+            "deviceId": "2G0YC1ZF7S08M3",
+            "name": "com.DP_Project.XRApp",
+            "processId": 16741,
+            "exited": true
+        },
+        {
+            "deviceId": "2G0YC1ZF7S08M3",
+            "name": "com.DP_Project.XRApp",
+            "processId": 30900,
             "exited": false
         }
     ],

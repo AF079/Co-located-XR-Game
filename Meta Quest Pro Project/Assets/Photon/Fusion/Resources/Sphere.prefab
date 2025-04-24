@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortKey: 1398993105
+  SortKey: 218916822
   ObjectInterest: 1
   Flags: 524289
   NestedObjects: []
@@ -378,3 +378,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0970fc5a5f8c69d4dafb9f74d7b7c901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SphereId: 0
+  logHandler: {fileID: 8624246998901972267, guid: afe9e1e4d213f2d4d8b407700b52cdf6, type: 3}

@@ -13,7 +13,7 @@ public class SphereGenerator : MonoBehaviour
     private Rigidbody rb;
     float fixedDeltaTime;
     float force = 5f;
-    float syncTime = 20;
+    float syncTime = 15;
 
     bool doneSync = false;
 
@@ -45,8 +45,8 @@ public class SphereGenerator : MonoBehaviour
     void Start()
     {
         fixedDeltaTime = Time.fixedDeltaTime;
-        Time.timeScale = 0.07f; //Slow down time
-
+        Time.timeScale = 0.09f; //Slow down time
+        //Time.fixedDeltaTime = fixedDeltaTime * Time.timeScale;
         sphereList = new List<GameObject>();
         StartCoroutine(generateSpheres());
         StartCoroutine(waitForSync());
@@ -72,12 +72,13 @@ public class SphereGenerator : MonoBehaviour
             //Assign color
             sphere.GetComponent<MeshRenderer>().material.color = allColors[i];
             // sphere.GetComponent<NetworkedSphere>().color = allColors[i];
+            sphere.GetComponent<Renderer>().enabled = false;
 
             Debug.Log("SPAWNED SPHERE " + i + " AT " + sphere.transform.position);
             //Add sphere to list
             sphereList.Add(sphere);
         }
-        GENERATED = true;
+
         yield return null;
 
     }
@@ -90,9 +91,11 @@ public class SphereGenerator : MonoBehaviour
 
     private IEnumerator initSpheres()
     {
+        Debug.Log("Waiting for sync...");
         while (!doneSync) yield return null;
         foreach (var sphere in sphereList)
         {
+            sphere.GetComponent<Renderer>().enabled = true;
             rb = sphere.GetComponent<Rigidbody>();
             rb.isKinematic = false;
             rb.useGravity = true;
@@ -100,5 +103,7 @@ public class SphereGenerator : MonoBehaviour
             Vector3 startForce = new Vector3(UnityEngine.Random.Range(-force, force), 0, UnityEngine.Random.Range(-force, force)); //Random direction
             rb.AddForce(startForce, ForceMode.Impulse); //Apply random force in x and z direction
         }
+        Debug.Log("Done initializing spheres");
+        GENERATED = true;
     }
 }

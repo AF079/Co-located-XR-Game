@@ -7,11 +7,22 @@ using System;
 using System.Text;
 using System.Collections;
 
-public class NewBehaviourScript : NetworkBehaviour
+public class ColocationManager : NetworkBehaviour
 {
     [SerializeField] private AlignmentManager alignmentManager;
     private Guid _sharedAnchorGroupId;
+    public static ColocationManager Instance { get; private set; }
+    [Networked] public int SphereSpawnCounter { get; set; }
 
+    public int GetNextSphereId()
+    {
+        SphereSpawnCounter++;
+        return SphereSpawnCounter;
+    }
+    private void Awake()
+    {
+        Instance = this;
+    }
     public override void Spawned()
     {
         base.Spawned();
@@ -26,12 +37,14 @@ public class NewBehaviourScript : NetworkBehaviour
             yield return null;
         }
         PrepareColocation();
+        yield return null;
     }
 
     private void PrepareColocation()
     {
         if (Object.HasStateAuthority)
         {
+
 
             Debug.Log("Colocation: Starting advertisement");
             AdvertiseColocationSession();

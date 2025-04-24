@@ -3,13 +3,15 @@ using UnityEngine;
 
 public class LogHandler : MonoBehaviour
 {
-    private string fileName = "MyTextFile.txt";
+    private string fileName = "LATENCY_LOG.txt";
+    public static string LOG = "";
+    
 
     void Start()
     {
-        Debug.Log("SAVING");
-        SaveText("THIS IS DATA :)");
-        Debug.Log("DONE SAVING");
+        LOG = string.Format("{0,-10} | {1,-12} | {2,-14:F3}\n",
+                                     "Sphere Nr", "Timestamp", "RTT");
+        SaveText(LOG);
     }
 
     public void SaveText(string content)

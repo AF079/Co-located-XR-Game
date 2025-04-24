@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/test1.unity
+- path: Assets/Scenes/SpatialAnchorScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

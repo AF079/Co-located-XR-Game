@@ -8,18 +8,18 @@
         "HitboxDefaultCapacity": 512,
         "CachedStaticCollidersSize": 64
     },
-    "EnqueueIncompleteSynchronousSpawns": false,
+    "EnqueueIncompleteSynchronousSpawns": true,
     "InvokeRenderInBatchMode": true,
     "NetworkIdIsObjectName": false,
     "HideNetworkObjectInactivityGuard": false,
-    "AllowClientServerModesInWebGL": false,
+    "AllowClientServerModesInWebGL": true,
     "ClientsRecordFrameAndPacketTimingTraces": false,
     "Simulation": {
         "InputDataWordCount": 0,
         "ReplicationFeatures": 1,
         "InputTransferMode": 0,
         "SimulationUpdateTimeMode": 0,
-        "PlayerCount": 10,
+        "PlayerCount": 2,
         "TickRateSelection": {
             "Client": 64,
             "ServerIndex": 0,
@@ -42,17 +42,17 @@
     "NetworkConditions": {
         "Enabled": false,
         "DelayShape": 0,
-        "DelayMin": 0.15,
-        "DelayMax": 0.15,
-        "DelayPeriod": 0.0,
-        "DelayThreshold": 0.0,
-        "AdditionalJitter": 0.05,
+        "DelayMin": 0.1978394985198975,
+        "DelayMax": 0.3523119390010834,
+        "DelayPeriod": 3.100929737091065,
+        "DelayThreshold": 0.45830294489860537,
+        "AdditionalJitter": 0.06585957109928131,
         "LossChanceShape": 0,
-        "LossChanceMin": 0.05,
-        "LossChanceMax": 0.05,
-        "LossChanceThreshold": 0.0,
-        "LossChancePeriod": 0.0,
-        "AdditionalLoss": 0.0
+        "LossChanceMin": 0.0,
+        "LossChanceMax": 0.27043110132217409,
+        "LossChanceThreshold": 0.19528239965438844,
+        "LossChancePeriod": 1.263960838317871,
+        "AdditionalLoss": 0.297568142414093
     },
     "Heap": {
         "PageShift": 15,
@@ -70,5 +70,5 @@
     "UseSerializableDictionary": true,
     "NullChecksForNetworkedProperties": true,
     "CheckRpcAttributeUsage": false,
-    "CheckNetworkedPropertiesBeingEmpty": false
+    "CheckNetworkedPropertiesBeingEmpty": true
 }
