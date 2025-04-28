@@ -30,7 +30,7 @@
     "Network": {
         "ConnectionTimeout": 10.0,
         "ConnectionShutdownTime": 1.0,
-        "ReliableDataTransferModes": 3
+        "ReliableDataTransferModes": -1
     },
     "HostMigration": {
         "EnableAutoUpdate": false,
@@ -42,17 +42,17 @@
     "NetworkConditions": {
         "Enabled": false,
         "DelayShape": 0,
-        "DelayMin": 0.1978394985198975,
-        "DelayMax": 0.3523119390010834,
-        "DelayPeriod": 3.100929737091065,
-        "DelayThreshold": 0.45830294489860537,
-        "AdditionalJitter": 0.06585957109928131,
+        "DelayMin": 0.05337347462773323,
+        "DelayMax": 0.2772146761417389,
+        "DelayPeriod": 1.1097040176391602,
+        "DelayThreshold": 0.0,
+        "AdditionalJitter": 0.04761909693479538,
         "LossChanceShape": 0,
-        "LossChanceMin": 0.0,
-        "LossChanceMax": 0.27043110132217409,
-        "LossChanceThreshold": 0.19528239965438844,
-        "LossChancePeriod": 1.263960838317871,
-        "AdditionalLoss": 0.297568142414093
+        "LossChanceMin": 0.06240106001496315,
+        "LossChanceMax": 0.3158061504364014,
+        "LossChanceThreshold": 0.0,
+        "LossChancePeriod": 0.940155267715454,
+        "AdditionalLoss": 0.05395420268177986
     },
     "Heap": {
         "PageShift": 15,

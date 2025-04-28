@@ -1,17 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using ExitGames.Client.Photon.StructWrapping;
+
+
 using Fusion;
 using UnityEngine;
-using UnityEditor;
-using Fusion.Sockets;
-using UnityEngine.Pool;
-using Unity.VisualScripting;
+using Fusion.Statistics;
 
 public class SphereController : NetworkBehaviour
 {
     //private Dictionary<string, double> userPressTimestamps = new Dictionary<string, double>();
-
+    private FusionStatisticsSnapshot test_snap_shot;
     public struct InteractionEntry : INetworkStruct
     {
         [Networked] public NetworkString<_16> playerName { get; set; }
@@ -31,16 +27,16 @@ public class SphereController : NetworkBehaviour
     bool isTouching = false;
     int REQ_NUM_INTERACTIONS = 2;
 
-    public float maxSpeed = 5f;
-    public float maxAngularSpeed = 10f;
+    public float maxSpeed = 100f;
+    public float maxAngularSpeed = 100f;
     // public GameObject SphereLatencyManager_obj;
     public GameObject logHandler;
     private Rigidbody rb;
     [Networked] private TickTimer RespawnTimer { get; set; }
-    private const string ConfigPath = "NetworkProject.Config";
 
     [Networked, OnChangedRender(nameof(OnVisibilityChanged))]
     public bool IsVisible { get; set; }
+    private bool hasInteracted = false;
 
     private void OnVisibilityChanged()
     {
@@ -56,59 +52,95 @@ public class SphereController : NetworkBehaviour
         transform.position = Position;
     }
 
-
-    private bool shouldRespawn = false;
     private float waitTime = 10f;
     private float dt = 0;
+
+    private bool shouldRespawn = false;
+
+    private double host_mode_time_stamp = -1;
+    string color;
     public override void Spawned()
     {
 
         base.Spawned(); // Not required, but keeps compatibility
         // latencyManager = SphereLatencyManager_obj.GetComponent<SphereLatencyManager>();
-        myName = "user" + Random.Range(1, 1000);
+        myName = "user" + UnityEngine.Random.Range(1, 1000);
         Debug.Log("IN SPHERE CONTROLLER " + myName);
         rb = gameObject.GetComponent<Rigidbody>();
+        color = GetColorName(gameObject.GetComponent<MeshRenderer>().material.color);
         if (HasStateAuthority && ColocationManager.Instance != null)
         {
             SphereId = ColocationManager.Instance.GetNextSphereId();
 
         }
+        test_snap_shot = new FusionStatisticsSnapshot();
         IsVisible = true;
-
-        // if (!Runner.IsServer)
-        // {
-
-        //     var config = NetworkProjectConfig.Global;
-        //     if (config == null)
-        //     {
-        //         Debug.LogError($"NetworkProjectConfig not found at Resources/{ConfigPath}");
-        //         return;
-        //     }
-
-        //     config.NetworkConditions.Enabled = true;
-        //     config.NetworkConditions.DelayMin = 0.05f;
-        //     config.NetworkConditions.DelayMax = 0.15f;
-        //     config.NetworkConditions.AdditionalJitter = 0.20f;
-
-        //     config.NetworkConditions.LossChanceMin = 0.01f;
-        //     config.NetworkConditions.LossChanceMax = 0.20f;
-        //     config.NetworkConditions.AdditionalLoss = 0.05f;
-
-        // }
     }
 
 
-    // void FixedUpdate()
-    // {
-    //     if (rb.velocity.magnitude > maxSpeed)
-    //     {
-    //         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
-    //     }
+    void FixedUpdate()
+    {
+        if (rb == null) return;
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+        }
 
-    //     if (rb.angularVelocity.magnitude > maxAngularSpeed)
-    //     {
-    //         rb.angularVelocity = Vector3.ClampMagnitude(rb.angularVelocity, maxAngularSpeed);
-    //     }
+        if (rb.angularVelocity.magnitude > maxAngularSpeed)
+        {
+            rb.angularVelocity = Vector3.ClampMagnitude(rb.angularVelocity, maxAngularSpeed);
+        }
+
+        // if (test_snap_shot == null) return;
+        // Debug.Log("In-Bandwidth " + test_snap_shot.InBandwidth);
+        // Debug.Log("Out-Bandwidth " + test_snap_shot.OutBandwidth);
+
+        // Debug.Log("In-Packets " + test_snap_shot.InPackets);
+        // Debug.Log("Out-Bandwidth " + test_snap_shot.OutPackets);
+
+        // Debug.Log("Interpolation Speed " + test_snap_shot.InterpolationSpeed);
+        // Debug.Log("Interpolation Offset " + test_snap_shot.InterpolationOffset);
+
+        // Debug.Log("InObjectUpdates " + test_snap_shot.InObjectUpdates);
+        // Debug.Log("OutObjectUpdates " + test_snap_shot.OutObjectUpdates);
+
+        // Debug.Log("RTT " + test_snap_shot.RoundTripTime);
+
+        // Debug.Log("WordsReadCount " + test_snap_shot.WordsReadCount);
+        // Debug.Log("WordsWrittenCount " + test_snap_shot.WordsWrittenCount);
+
+
+    }
+
+    public override void FixedUpdateNetwork()
+    {
+        if (Object == null || Runner.GameMode == GameMode.Shared) return;
+
+        if (Object.HasStateAuthority && shouldRespawn)
+        {
+            shouldRespawn = false;
+            IsVisible = false;
+            Respawn();
+
+        }
+    }
+
+    // [Rpc(sources: RpcSources.StateAuthority, targets: RpcTargets.All, Channel = RpcChannel.Reliable)]
+
+    // public void RPC_PingFromHost(double host_ping_time_stamp)
+    // {
+    //     if (Object.HasStateAuthority) return;
+    //     double owd_h2c = Runner.SimulationTime - host_ping_time_stamp;
+    //     //log owd_h2c
+    //     RPC_PongFromClient(Runner.SimulationTime);
+    // }
+
+    // [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority, Channel = RpcChannel.Reliable)]
+
+    // public void RPC_PongFromClient(double client_pong_time_stamp)
+    // {
+    //     double owd_c2h = Runner.SimulationTime - client_pong_time_stamp;
+    //     //loog owd_h2c
     // }
 
     public void RequestOwnership()
@@ -130,11 +162,12 @@ public class SphereController : NetworkBehaviour
         {
             isTouching = true;
 
-
-            RequestOwnership();
+            if (Runner.GameMode == GameMode.Shared)
+            {
+                RequestOwnership();
+            }
         }
     }
-
 
 
     private void OnTriggerStay(Collider other)
@@ -144,56 +177,108 @@ public class SphereController : NetworkBehaviour
         if (isTouching && !other.CompareTag("sphere"))
         {
             Debug.Log("INTERACTING!");
-            if (hasBeenPopped) return;
 
-            if (Object.HasStateAuthority)
+            if (Runner.GameMode == GameMode.Shared)
             {
-                double timeStamp = Runner.SimulationTime;
-
-                if (interactionCount == 0)
+                if (hasBeenPopped) return;
+                if (Object.HasStateAuthority)
                 {
-                    interactionList.Set(0, new InteractionEntry
-                    {
-                        playerName = myName,
-                        timeStamp = timeStamp
-                    });
-                    interactionCount++;
+                    HandleInteraction(Runner.SimulationTime, myName);
                 }
                 else
                 {
-                    if (interactionList[0].playerName == myName)
-                    {
-                        interactionList.Set(0, new InteractionEntry
-                        {
-                            playerName = myName,
-                            timeStamp = timeStamp
-                        });
-                    }
-                    else
-                    {
-
-                        interactionList.Set(1, new InteractionEntry
-                        {
-                            playerName = myName,
-                            timeStamp = timeStamp
-                        });
-
-                        double timeDiff = Mathf.Abs((float)(interactionList[1].timeStamp - interactionList[0].timeStamp));
-                        if (timeDiff <= 1f) //on second time diff
-                        {
-                            hasBeenPopped = true;
-                            RPC_LogData();
-                            RPC_DestroySphere();
-                        }
-                    }
+                    RequestOwnership();
                 }
             }
             else
             {
-                RequestOwnership();
+                if (Runner.IsServer)
+                {
+                    host_mode_time_stamp = Runner.SimulationTime;
+                    Debug.Log("IsHost " + SphereId + " " + Runner.IsServer + " " + color);
+                }
+                else
+                {
+                    Debug.Log("IsHost " + SphereId + " " + Runner.IsServer);
+                    RPC_SendDataToHost(Runner.SimulationTime);
 
+                }
             }
+        }
+    }
 
+    [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority, Channel = RpcChannel.Reliable)]
+    public void RPC_SendDataToHost(double client_timeStamp)
+    {
+
+        if (Runner == null || Object == null || hasInteracted) return;
+
+        if (host_mode_time_stamp == -1) return;
+
+        double timeDiff = Mathf.Abs((float)(host_mode_time_stamp - client_timeStamp));
+        if (timeDiff <= 2.0f)
+        {
+            Debug.Log("IsHost " + Runner.IsServer + " " + SphereId + " SendingClientLogSignal " + color);
+
+            RPC_SendClientLogSignal();
+            //hasInteracted = true;
+            // LogData();
+            RPC_DestroySphere();
+        }
+    }
+
+    [Rpc(sources: RpcSources.StateAuthority, targets: RpcTargets.All, Channel = RpcChannel.Reliable)]
+    public void RPC_SendClientLogSignal()
+    {
+        if (Runner == null || Object == null || hasInteracted) return;
+
+        //if (Runner.IsServer) return;
+
+        hasInteracted = true;
+        LogData();
+
+    }
+
+
+    private void HandleInteraction(double timeStamp, string name)
+    {
+
+        if (interactionCount == 0)
+        {
+            interactionList.Set(0, new InteractionEntry
+            {
+                playerName = name,
+                timeStamp = timeStamp
+            });
+            interactionCount++;
+        }
+        else
+        {
+            if (interactionList[0].playerName == name)
+            {
+                interactionList.Set(0, new InteractionEntry
+                {
+                    playerName = name,
+                    timeStamp = timeStamp
+                });
+            }
+            else
+            {
+
+                interactionList.Set(1, new InteractionEntry
+                {
+                    playerName = name,
+                    timeStamp = timeStamp
+                });
+                interactionCount++;
+                double timeDiff = Mathf.Abs((float)(interactionList[1].timeStamp - interactionList[0].timeStamp));
+                if (timeDiff <= 1f) //on second time diff
+                {
+                    hasBeenPopped = true;
+                    RPC_LogData();
+                    RPC_DestroySphere();
+                }
+            }
         }
     }
 
@@ -204,73 +289,104 @@ public class SphereController : NetworkBehaviour
         if (!other.CompareTag("sphere"))
         {
             isTouching = false;
+            hasInteracted = false;
             Debug.Log("STOPPED INTERACTING!");
+            host_mode_time_stamp = -1;
 
         }
     }
 
-
-    // private void OnVisibilityChanged()
-    // {
-    //     gameObject.SetActive(IsVisible);
-    // }
-
     [Rpc(sources: RpcSources.All, targets: RpcTargets.All, Channel = RpcChannel.Reliable)]
     public void RPC_LogData()
     {
-        if (ColocationManager.Instance != null)
+        if (ColocationManager.Instance == null)
+            return;
+
+        Debug.Log("Logging, IsHost " + Runner.IsServer + " " + color);
+        float timeStamp = 0;
+        double rtt = 0;
+        int ticks = 0;
+        if (Runner != null)
         {
+            rtt = Runner.GetPlayerRtt(Runner.LocalPlayer);
+            timeStamp = Runner.SimulationTime;
+            ticks = Runner.TicksExecuted;
+        }
+        color = GetColorName(gameObject.GetComponent<MeshRenderer>().material.color);
+        LogHandler.LOG += string.Format("{0,-10} | {1,-12} | {2,-14:F3} | {3,-10} | {4,-12}\n",
+                                SphereId, timeStamp, rtt, ticks, color);
 
-            //RPC_BroadcastPop(SphereId);
+        logHandler.GetComponent<LogHandler>().SaveText(LogHandler.LOG);
+        if (!Runner.IsServer)
+        {
+            hasInteracted = false;
+        }
+    }
 
-            float timeStamp;
-            double rtt;
-            if (Runner != null)
-            {
-                rtt = Runner.GetPlayerRtt(Runner.LocalPlayer);
-                timeStamp = Runner.SimulationTime;
+    public void LogData()
+    {
+        if (ColocationManager.Instance == null)
+            return;
 
-            }
-            else
-            {
-                rtt = 0;
-                timeStamp = 0;
-            }
-            LogHandler.LOG += string.Format("{0,-10} | {1,-12} | {2,-14:F3}\n",
-                                             SphereId, timeStamp, rtt);
+        Debug.Log("Logging, IsHost " + Runner.IsServer + " " + color);
+        float timeStamp = 0;
+        double rtt = 0;
+        int ticks = 0;
+        if (Runner != null)
+        {
+            rtt = Runner.GetPlayerRtt(Runner.LocalPlayer);
+            timeStamp = Runner.SimulationTime;
+            ticks = Runner.TicksExecuted;
+        }
+        color = GetColorName(gameObject.GetComponent<MeshRenderer>().material.color);
+        LogHandler.LOG += string.Format("{0,-10} | {1,-12} | {2,-14:F3} | {3,-10} | {4,-12}\n",
+                                SphereId, timeStamp, rtt, ticks, color);
 
-            logHandler.GetComponent<LogHandler>().SaveText(LogHandler.LOG);
-
+        logHandler.GetComponent<LogHandler>().SaveText(LogHandler.LOG);
+        if (!Runner.IsServer)
+        {
+            hasInteracted = false;
         }
     }
 
     [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority, Channel = RpcChannel.Reliable)]
     public void RPC_DestroySphere()
     {
-
-        Debug.Log("Has State Auhority: " + Object.HasStateAuthority);
-        Debug.Log("Diactivating Sphere: " + SphereId);
-        //gameObject.SetActive(false);
-        IsVisible = false;
-        Debug.Log("Deactivated Sphere: " + SphereId);
-
         shouldRespawn = true;
-        Debug.Log("ShouldRespawn: " + shouldRespawn);
-        Respawn();
 
+        if (Runner.GameMode != GameMode.Shared) return;
+        IsVisible = false;
+        Respawn();
     }
 
     public void Respawn()
     {
-        Vector3 randomPos = new Vector3(Random.Range(-1f, 1f), Random.Range(1f, 2f), Random.Range(-1f, 1f));
-        Position = randomPos;
-        IsVisible = true;
-        hasBeenPopped = false;
+        hasInteracted = false;
         interactionList.Clear();
         interactionCount = 0;
+        host_mode_time_stamp = -1;
+        IsVisible = true;
+        hasBeenPopped = false;
+        Vector3 randomPos = new Vector3(Random.Range(-1f, 1f), Random.Range(1f, 2f), Random.Range(-1f, 1f));
+        Position = randomPos;
         Debug.Log("Set new position of Sphere " + SphereId + " to " + Position);
     }
 
+
+    private string GetColorName(Color color)
+    {
+        if (color == Color.red) return "Red";
+        if (color == Color.blue) return "Blue";
+        if (color == Color.green) return "Green";
+        if (color == Color.white) return "White";
+        if (color == new Color(1f, 1f, 0f)) return "Yellow";
+        if (color == new Color(0f, 1f, 1f)) return "Mint";
+        if (color == new Color(0.5f, 0f, 1f)) return "Purple";
+        if (color == new Color(1f, 0f, 1f)) return "Pink";
+        if (color == new Color(1f, 0.5f, 0f)) return "Orange"; // Manual match
+                                                               // fallback
+        return "Unknown";
+    }
+
+
 }
-
-

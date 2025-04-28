@@ -5,12 +5,12 @@ public class LogHandler : MonoBehaviour
 {
     private string fileName = "LATENCY_LOG.txt";
     public static string LOG = "";
-    
+
 
     void Start()
     {
-        LOG = string.Format("{0,-10} | {1,-12} | {2,-14:F3}\n",
-                                     "Sphere Nr", "Timestamp", "RTT");
+        LOG = string.Format("{0,-10} | {1,-12} | {2,-14:F3} | {3,-10} | {4,-12}\n",
+                                     "Sphere Nr", "Timestamp", "RTT", "Ticks", "Color");
         SaveText(LOG);
     }
 

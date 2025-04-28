@@ -45,7 +45,7 @@ public class SphereGenerator : MonoBehaviour
     void Start()
     {
         fixedDeltaTime = Time.fixedDeltaTime;
-        Time.timeScale = 0.09f; //Slow down time
+        Time.timeScale = 0.2f; //Slow down time
         //Time.fixedDeltaTime = fixedDeltaTime * Time.timeScale;
         sphereList = new List<GameObject>();
         StartCoroutine(generateSpheres());
